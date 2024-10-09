@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Servicios</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Tu archivo CSS -->
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="ruta/a/tu/imagen.png" alt="Mi Empresa" style="height: 40px;"> <!-- Reemplaza con la ruta de tu imagen -->
+                </a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="animations.html">Animaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">Nuestros Servicios</h2> <!-- Título centrado -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <p class="card-text">
+                    Todo lo que te imagines lo podemos hacer por ti, claro, siempre y cuando esté señalado aquí abajo :)
+                </p>
+            </div>
+        </div>
+
+        <h2>Pedido:)</h2>
+        <p>Selecciona qué quieres que hagamos por ti aquí:</p>
+        <form action="https://formspree.io/f/mlderzpj" method="POST" enctype="multipart/form-data">
+            <!-- Reemplaza 'your_form_id' con tu ID de Formspree -->
+            <div class="form-group">
+                <label for="nombre">Nombre del cliente:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre aquí queride cliente :)" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">¿Qué desea contratar?</label>
+                <select id="tipo" name="tipo" required class="form-control" onchange="mostrarDetalle()">
+                    <option value="" disabled selected>Seleccione una de las siguientes opciones</option>
+                    <option value="dibujo">Dibujo</option>
+                    <option value="animacion">Animación</option>
+                    <option value="tarjeta">Tarjeta de Regalo</option>
+                </select>
+            </div>
+
+            <!-- Div para mostrar el detalle del servicio -->
+            <div id="detalleServicio" class="form-group" style="display: none;">
+                <label id="detalleLabel"></label>
+            </div>
+
+            <!-- Div para seleccionar el paquete del Dibujo -->
+            <div id="paqueteDibujo" class="form-group" style="display: none;">
+                <label for="tipo2">¿Qué paquete deseas para Dibujo?</label>
+                <select id="tipo2" name="tipo2" class="form-control" onchange="mostrarDetallePaqueteDibujo()">
+                    <option value="" disabled selected>Seleccione el paquete</option>
+                    <option value="normal">Dibujo Normal</option>
+                    <option value="caro">Dibujo Caro</option>
+                    <option value="lujoso">Dibujo Lujoso</option>
+                </select>
+                <div id="detallePaqueteDibujo" class="mt-2" style="display: none;">
+                    <label id="detalleLabelDibujo"></label>
+                </div>
+            </div>
+
+            <!-- Div para seleccionar el paquete de Animación -->
+            <div id="paqueteAnimacion" class="form-group" style="display: none;">
+                <label for="tipo3">¿Qué paquete deseas para Animación?</label>
+                <select id="tipo3" name="tipo3" class="form-control" onchange="mostrarDetallePaqueteAnimacion()">
+                    <option value="" disabled selected>Seleccione el paquete</option>
+                    <option value="normal">Animación Normal</option>
+                    <option value="caro">Animación Caro</option>
+                    <option value="lujoso">Animación Lujoso</option>
+                </select>
+                <div id="detallePaqueteAnimacion" class="mt-2" style="display: none;">
+                    <label id="detalleLabelAnimacion"></label>
+                </div>
+            </div>
+
+            <!-- Div para seleccionar el paquete de Tarjeta de Regalo -->
+            <div id="paqueteTarjeta" class="form-group" style="display: none;">
+                <label for="tipo4">¿Qué paquete deseas para Tarjeta de Regalo?</label>
+                <select id="tipo4" name="tipo4" class="form-control" onchange="mostrarDetallePaqueteTarjeta()">
+                    <option value="" disabled selected>Seleccione el paquete</option>
+                    <option value="normal">Tarjeta Normal</option>
+                    <option value="caro">Tarjeta Caro</option>
+                    <option value="lujoso">Tarjeta Lujosa</option>
+                </select>
+                <div id="detallePaqueteTarjeta" class="mt-2" style="display: none;">
+                    <label id="detalleLabelTarjeta"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="complemento">Agregar Complemento:</label>
+                <input type="file" id="complemento" name="complemento" class="form-control-file">
+                <small class="form-text text-muted">Puedes subir imágenes o archivos relacionados.</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="bg-dark text-white mt-5">
+        <div class="container text-center py-4 d-flex justify-content-center">
+            <div class="d-flex flex-column align-items-start mx-3">
+                <h5 class="mb-2">Síguenos:</h5>
+                <a href="https://www.youtube.com/channel/UCJW35gg5CEstJAuOgpQMVEw" class="text-white mb-1">Youtube</a>
+                <a href="https://www.tiktok.com/@aldair010904?_t=8qO2KMsgYXm&_r=1" class="text-white mb-1">TikTok</a>
+                <a href="https://www.instagram.com/aldair010904/" class="text-white mb-1">Instagram</a>
+                <a href="https://discord.gg/gzg5zd6p" class="text-white mb-1">Discord</a>
+            </div>
+            <div class="d-flex flex-column align-items-start mx-3">
+                <h5 class="mb-2">Apóyanos:</h5>
+                <a href="donaciones.html" class="text-white mb-1">Donaciones</a>
+                <a href="merch.html" class="text-white mb-1">Merch</a>
+                <a href="servicios.html" class="text-white mb-1">Servicios</a>
+            </div>
+            <div class="d-flex flex-column align-items-start mx-3">
+                <h5 class="mb-2">Menú:</h5>
+                <a href="index.html" class="text-white mb-1">Inicio</a>
+                <a href="proyectos.html" class="text-white mb-1">Proyectos</a>
+                <a href="animations.html" class="text-white mb-1">Animaciones</a>
+                <a href="nosotros.html" class="text-white mb-1">Nosotros</a>
+            </div>
+        </div>
+        <div class="container text-center py-2">
+            <p>Fireside Corp - 2024</p>
+            <p>&copy; Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function mostrarDetalle() {
+            const tipo = document.getElementById("tipo").value;
+            const detalleServicio = document.getElementById("detalleServicio");
+            const detalleLabel = document.getElementById("detalleLabel");
+
+            // Ocultar todos los paquetes
+            document.getElementById("paqueteDibujo").style.display = "none";
+            document.getElementById("paqueteAnimacion").style.display = "none";
+            document.getElementById("paqueteTarjeta").style.display = "none";
+
+            if (tipo === "dibujo") {
+                detalleServicio.style.display = "block";
+                detalleLabel.textContent = "Has seleccionado Dibujo.";
+                document.getElementById("paqueteDibujo").style.display = "block";
+            } else if (tipo === "animacion") {
+                detalleServicio.style.display = "block";
+                detalleLabel.textContent = "Has seleccionado Animación.";
+                document.getElementById("paqueteAnimacion").style.display = "block";
+            } else if (tipo === "tarjeta") {
+                detalleServicio.style.display = "block";
+                detalleLabel.textContent = "Has seleccionado Tarjeta de Regalo.";
+                document.getElementById("paqueteTarjeta").style.display = "block";
+            } else {
+                detalleServicio.style.display = "none";
+            }
+        }
+
+        function mostrarDetallePaqueteDibujo() {
+            const tipo2 = document.getElementById("tipo2").value;
+            const detallePaqueteDibujo = document.getElementById("detallePaqueteDibujo");
+            const detalleLabelDibujo = document.getElementById("detalleLabelDibujo");
+
+            switch (tipo2) {
+                case "normal":
+                    detallePaqueteDibujo.style.display = "block";
+                    detalleLabelDibujo.textContent = "Has seleccionado el paquete Dibujo Normal. Este paquete cuesta 10 soles.";
+                    break;
+                case "caro":
+                    detallePaqueteDibujo.style.display = "block";
+                    detalleLabelDibujo.textContent = "Has seleccionado el paquete Dibujo Caro. Este paquete cuesta 20 soles.";
+                    break;
+                case "lujoso":
+                    detallePaqueteDibujo.style.display = "block";
+                    detalleLabelDibujo.textContent = "Has seleccionado el paquete Dibujo Lujoso. Este paquete cuesta 30 soles.";
+                    break;
+                default:
+                    detallePaqueteDibujo.style.display = "none";
+                    break;
+            }
+        }
+
+        function mostrarDetallePaqueteAnimacion() {
+            const tipo3 = document.getElementById("tipo3").value;
+            const detallePaqueteAnimacion = document.getElementById("detallePaqueteAnimacion");
+            const detalleLabelAnimacion = document.getElementById("detalleLabelAnimacion");
+
+            switch (tipo3) {
+                case "normal":
+                    detallePaqueteAnimacion.style.display = "block";
+                    detalleLabelAnimacion.textContent = "Has seleccionado el paquete Animación Normal. Este paquete cuesta 15 soles.";
+                    break;
+                case "caro":
+                    detallePaqueteAnimacion.style.display = "block";
+                    detalleLabelAnimacion.textContent = "Has seleccionado el paquete Animación Caro. Este paquete cuesta 25 soles.";
+                    break;
+                case "lujoso":
+                    detallePaqueteAnimacion.style.display = "block";
+                    detalleLabelAnimacion.textContent = "Has seleccionado el paquete Animación Lujoso. Este paquete cuesta 40 soles.";
+                    break;
+                default:
+                    detallePaqueteAnimacion.style.display = "none";
+                    break;
+            }
+        }
+
+        function mostrarDetallePaqueteTarjeta() {
+            const tipo4 = document.getElementById("tipo4").value;
+            const detallePaqueteTarjeta = document.getElementById("detallePaqueteTarjeta");
+            const detalleLabelTarjeta = document.getElementById("detalleLabelTarjeta");
+
+            switch (tipo4) {
+                case "normal":
+                    detallePaqueteTarjeta.style.display = "block";
+                    detalleLabelTarjeta.textContent = "Has seleccionado el paquete Tarjeta Normal. Este paquete cuesta 5 soles.";
+                    break;
+                case "caro":
+                    detallePaqueteTarjeta.style.display = "block";
+                    detalleLabelTarjeta.textContent = "Has seleccionado el paquete Tarjeta Caro. Este paquete cuesta 10 soles.";
+                    break;
+                case "lujoso":
+                    detallePaqueteTarjeta.style.display = "block";
+                    detalleLabelTarjeta.textContent = "Has seleccionado el paquete Tarjeta Lujosa. Este paquete cuesta 15 soles.";
+                    break;
+                default:
+                    detallePaqueteTarjeta.style.display = "none";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

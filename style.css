@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    margin-top: 70px; /* Para evitar que el contenido quede detrás de la barra de navegación */
+}
+
+.carousel-item img {
+    height: auto;
+    max-height: 600px; /* Ajusta la altura máxima del carrusel */
+}
+
+.info-container {
+    background-image: url('images/pexels-rachel-claire-5865282-main.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Cubrir todo el contenedor */
+    background-position: center; /* Centrar la imagen */
+    height: 400px; /* Altura inicial */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #343a40; /* Color del fondo del pie de página */
+    color: white; /* Color del texto */
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Ocultar el botón por defecto */
+    z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+}

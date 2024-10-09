@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nosotros</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Tu archivo CSS -->
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="ruta/a/tu/imagen.png" alt="Mi Empresa" style="height: 40px;"> <!-- Reemplaza con la ruta de tu imagen -->
+                </a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="animations.html">Animaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">Sobre Nosotros</h2> <!-- Título centrado -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <p class="card-text">
+                    Aquí puedes incluir una breve descripción sobre tu empresa. Por ejemplo:
+                    "Mi Empresa es un estudio indie dedicado a la creación de videojuegos y animaciones innovadoras. Nos apasiona contar historias a través de experiencias interactivas y visuales únicas. Nuestro objetivo es ofrecer entretenimiento de alta calidad y conectar con nuestra comunidad de jugadores."
+                </p>
+            </div>
+        </div>
+
+        <h2>Contáctanos</h2>
+        <p>Si tienes alguna sugerencia, encuentras un error o te gustaría preguntarnos algo, puedes hacerlo aquí:</p>
+        <form action="https://formspree.io/f/your_form_id" method="POST" enctype="multipart/form-data">
+            <!-- Reemplaza 'your_form_id' con tu ID de Formspree -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre aquí..." required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">¿Qué deseas comunicar?</label>
+                <select id="tipo" name="tipo" required class="form-control">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="error">Error</option>
+                    <option value="pregunta">Pregunta</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="complemento">Agregar Complemento:</label>
+                <input type="file" id="complemento" name="complemento" class="form-control-file">
+                <small class="form-text text-muted">Puedes subir imágenes o archivos relacionados.</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="bg-dark text-white mt-5">
+        <div class="container text-center py-4 d-flex justify-content-center">
+            <div class="d-flex flex-column align-items-start mx-3">
+                <h5 class="mb-2">Síguenos:</h5>
+                <a href="https://www.youtube.com/channel/UCJW35gg5CEstJAuOgpQMVEw" class="text-white mb-1">Youtube</a>
+                <a href="https://www.tiktok.com/@aldair010904?_t=8qO2KMsgYXm&_r=1" class="text-white mb-1">TikTok</a>
+                <a href="https://www.instagram.com/aldair010904/" class="text-white mb-1">Instagram</a>
+                <a href="https://discord.gg/gzg5zd6p" class="text-white mb-1">Discord</a>
+            </div>
+            <div class="d-flex flex-column align-items-start mx-3">
+                <h5 class="mb-2">Apoyanos:</h5>
+                <a href="donaciones.html" class="text-white mb-1">Donaciones</a>
+                <a href="merch.html" class="text-white mb-1">Merch</a>
+                <a href="servicios.html" class="text-white mb-1">Servicios</a>
+            </div>
+            <div class="d-flex flex-column align-items-start mx-3">
+                <h5 class="mb-2">Menú:</h5>
+                <a href="index.html" class="text-white mb-1">Inicio</a>
+                <a href="proyectos.html" class="text-white mb-1">Proyectos</a>
+                <a href="animations.html" class="text-white mb-1">Animaciones</a>
+                <a href="nosotros.html" class="text-white mb-1">Nosotros</a>
+            </div>
+        </div>
+        <div class="container text-center py-2">
+            <p>Fireside Corp - 2024</p> 
+            <p>&copy; Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
